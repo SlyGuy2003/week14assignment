@@ -1,0 +1,9 @@
+img {
+    width: 500px;
+}
+
+#movie-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
