@@ -1,17 +1,42 @@
 import React from 'react'
 import { render } from 'react-dom'
+import Stars from './Stars.js'
+import './reviewform.css'
 
 export default class ReviewForm extends React.Component{
     constructor(props){
     super(props)
+
+    this.state = {
+        rating: 0,
+        text: ''   
+    }
     } 
+
+    handletext(e) {
+        this.setState({text: e.target.value})
+    }
+
+    handleStars(newRating) {
+        this.setState({rating: newRating})
+    }
+
+    handleSubmit(e) {
+        e.preventDefault()
+
+        const review = {
+            ...this.state
+        }
+        console.log(review)
+    }
 
 
 render() {
     return(
-        <form>
-            <h3>Leave a review here:</h3>
-            <input className='form-control' placeholder='Review'></input>
+        <form onSubmit={(e) => this.handleSubmit(e)} className='bg-light text-center rounded'>
+            <h3>\/ Leave a review here \/</h3>
+            <Stars handleStars = {this.handleStars.bind(this)} className = 'text-center'></Stars>
+            <input className='form-control' placeholder='Review' size="100" onChange={(e) => this.handletext(e)}></input>
             <button className='form-control btn btn-primary'>Submit</button>
         </form>
     ) 
