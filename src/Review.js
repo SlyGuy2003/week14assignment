@@ -7,11 +7,10 @@ export default class Review extends React.Component{
         super(props)
 
         this.review = props.review
-        console.log(this.review)
     }
 
     render() {
-        return(
+        return(// compiles and creates the review part of the movie 
             <div className='bg-light text-center rounded'>
                 <Rating className='text-center' value = {this.review.rating} readOnly ></Rating>
                 <p>{this.review.text} </p>

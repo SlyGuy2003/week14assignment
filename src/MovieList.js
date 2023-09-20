@@ -1,6 +1,5 @@
 import React from 'react'
 import Movie from './Movie'
-import ReviewList from './ReviewList';
 
 export default class MovieList extends React.Component{
     constructor(props){
@@ -12,7 +11,7 @@ export default class MovieList extends React.Component{
 
       render() {
 
-        let movieOne = 
+        let movieOne =  // movie arrays that hold all of the movie data to be passed down throughout the components
             {
               id: 1,
               Title: "Iron Man",
@@ -54,9 +53,9 @@ export default class MovieList extends React.Component{
             }
 
 
-        return(
+        return( // returning 4 movie components
             <div>
-            <Movie {...movieOne} ></Movie>
+            <Movie {...movieOne} ></Movie> 
             <Movie {...movieTwo} ></Movie>
             <Movie {...movieThree} ></Movie>
             <Movie {...movieFour} ></Movie>

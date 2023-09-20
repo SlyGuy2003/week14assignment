@@ -1,19 +1,21 @@
 import React from 'react'
 import ReviewList from './ReviewList'
-import Stars from './Stars'
 import ReviewForm from './ReviewForm'
-import Review from './Review'
 import './movie.css'
 export default class Movie extends React.Component{
     constructor(props){
         super(props)
 
-        this.moviecard = this.moviecard.bind(this)
+        this.state = {
+            review: props.Review
+        }
+
+        this.moviecard = this.moviecard.bind(this) // binding the named function so it properly works
         } 
 
        
 
-        moviecard(props) {
+        moviecard(props) { // function that creates the entire movie component including all the review peices
             return(
                 <div id = 'movie-div'className='col-sm text-center p-1'>
                 <div className='row card bg-dark'>
@@ -22,8 +24,8 @@ export default class Movie extends React.Component{
                     <img className='rounded' src = {props.coverImage}></img>
                     <div className='card-body'>
                     <p className='text-white'>{props.Rating}</p>
-                    <ReviewList {...props}></ReviewList>
-                    <ReviewForm {...props}></ReviewForm>
+                    <ReviewList {...props} ></ReviewList>
+                    
                     </div>
                     </div>
                 </div>
