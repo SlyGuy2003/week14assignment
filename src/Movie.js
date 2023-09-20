@@ -23,7 +23,7 @@ export default class Movie extends React.Component{
                     <div className='card-body'>
                     <p className='text-white'>{props.Rating}</p>
                     <ReviewList {...props}></ReviewList>
-                    <ReviewForm></ReviewForm>
+                    <ReviewForm {...props}></ReviewForm>
                     </div>
                     </div>
                 </div>

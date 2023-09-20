@@ -9,7 +9,8 @@ export default class ReviewForm extends React.Component{
 
     this.state = {
         rating: 0,
-        text: ''   
+        text: '',
+        review: this.props.Reviews
     }
     } 
 
@@ -23,11 +24,13 @@ export default class ReviewForm extends React.Component{
 
     handleSubmit(e) {
         e.preventDefault()
-
+        console.log(this.props)
         const review = {
-            ...this.state
+            rating: this.state.rating,
+            text: this.state.text
         }
-        console.log(review)
+        this.props.Reviews.push(review)
+        this.setState({review: this.props.Reviews})
     }
 
 
